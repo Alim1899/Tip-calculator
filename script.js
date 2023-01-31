@@ -11,23 +11,39 @@ const options = [opt1,opt2,opt3,opt4,opt5,opt6];
 const opts = document.querySelector('.optionsLabel');
 const reset = document.querySelector('.reset');
 
+const customInput = document.querySelector('.customInput');
+
 
 let percent ;
 
     opts.addEventListener('click',function(e){
-       
+        e.preventDefault()
+       if(e.target.value){
+         if (e.target.value=='tip') {
+            
+            customInput.style.display = 'none';
+            opt6.style.display = 'block';
+         options.forEach(el=>el.style.backgroundColor = '');
+       e.target.style.backgroundColor = 'darkCyan';
+       percent = parseInt(e.target.textContent);
+    }
+     if(e.target.value!='tip'){
+        options.forEach(el=>el.style.backgroundColor = '');
+
+        options.forEach(el=>el.style.backgroundColor = '')
+        opt6.style.display = 'none';
+        customInput.style.display = 'block';
+        customInput.addEventListener('input',function(t){
+            e.preventDefault();
+            console.log(t.target.value, "shiitt");
+            percent = t.target.value;
+            
+        })
+    }
     
-     if (e.target.value) {
-         console.log(e.target.value);
-        if(e.target.value==='custom'){
-        document.querySelector('.customInput').style.display = 'block';
-        }
-       percent=e.target.value; 
-       options.forEach(el=>el.style.backgroundColor='')
-    e.target.style.backgroundColor = 'darkCyan';
-    } 
-    
-})
+}
+       }     
+   )
 
 
 
@@ -35,7 +51,11 @@ let percent ;
 
    
 reset.addEventListener('click',function(){
-    const bill = parseInt(document.querySelector('.bill').value);
+   location.reload();
+})
+
+const calculate = function(){
+    const bill = parseInt();
     const people = parseInt(document.querySelector('.people').value);
     const tip = bill/100*percent;
     const amount = (bill +tip)/people;
@@ -43,5 +63,4 @@ reset.addEventListener('click',function(){
     console.log(amount);
     document.querySelector('.amountSplit').textContent=tip/people;
     document.querySelector('.totalSplit').textContent=amount
-})
-
+}
