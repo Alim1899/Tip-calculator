@@ -9,7 +9,7 @@
 }
 *{  
     font-family: 'Space Mono', monospace;
-    border-radius: 5px;
+    border-radius: 15px;
 }
 .calculator{
 background-color:var(--lightGrayish);
@@ -33,7 +33,7 @@ overflow: hidden;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    max-width: 50vw;
+    max-width: 40vw;
     min-width: 500px;
     min-height: 200px;
     height: 40vh;
@@ -83,12 +83,22 @@ background-color: var(--lightGrayish);
     height: 25px;
     cursor: pointer;
 }
+.section-1>label>div>option:hover{
+  color: var(--cyan);
+}
+.customInput{
+    width: 70px;
+}
 
 
 
 
 
 
+
+.hidden{
+    display: none;
+}
 
 .attribution{
     text-align: center;

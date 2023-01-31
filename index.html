@@ -15,7 +15,7 @@
     <div class="content">
 
   <div class="section-1">
-    <label class="billLabel">Bill<input placeholder="$ 0">
+    <label class="billLabel">Bill<input type="number" min="0" class="bill" placeholder="$ 0">
 </label>
 
   <label class="optionsLabel">
@@ -26,13 +26,14 @@
   <option class="option-3" value="15">15%</option>
   <option class="option-4" value="25">25%</option>
   <option class="option-5" value="50">50%</option>
+  <input type="number" min="0" class="hidden customInput">
   <option class="option-6" value="custom">Custom</option>
     </div>
 </label>
 
 <label class="peopleLabel">
   Number Of People
-  <Input class="people" placeholder="🙍‍♂️0">
+  <Input type="number" min="1" class="people" placeholder="🙍‍♂️0">
 </label>
   </div>
 
@@ -44,14 +45,14 @@
      <h4>Tip Amount
       <br>/ person
      </h4> 
-      <h3 class="splitter">$0.00</h3>
+      <h3 class="splitter amountSplit">$0.00</h3>
     </div>
 
     <div class="total split">
       <h4>Total
        <br>/ person
      </h4> 
-       <h3 class="splitter">$0.00</h3>
+       <h3 class="splitter totalSplit">$0.00</h3>
      </div>
 
   <button class="reset" type="reset">RESET</button>
