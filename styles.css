@@ -92,11 +92,6 @@ background-color: var(--lightGrayish);
 }
 
 
-
-
-
-
-
 .hidden{
     display: none;
 }
@@ -104,4 +99,32 @@ background-color: var(--lightGrayish);
 .attribution{
     text-align: center;
     margin-top: 25vh;
+}
+.attribution>a{color:black;}
+
+
+@media (max-width:500px) {
+    .content{
+        display: block;
+       min-width: 300px;
+       margin-top: 5vh;
+        
+    }
+    .section-1, .section-2{
+        position: relative;
+        margin: auto;
+        width: 90%;
+        height: 90%;
+        min-height: 240px;
+    }
+    .section-2{
+        border: 15px solid white;
+    }
+       .reset{
+        margin-top: 0;
+       }
+
+       .attribution{
+        margin-top: 40vh;
+       }
 }
