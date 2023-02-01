@@ -61,8 +61,7 @@ reset.addEventListener('click',function(){
 
 
 const calculate = function(){
-    const bill = parseInt(document.querySelector('.bill'));
-    const people = parseInt(document.querySelector('.people').value);
+   
     const tip = bill/100*percent;
     const amount = (bill +tip)/people;
     console.log(bill +tip);
@@ -72,9 +71,21 @@ const calculate = function(){
 }
 
 document.querySelector('.people').addEventListener('input',function(){
-   if(percent>0) console.log(percent);
-   if(percent==0)console.log('shit');
-    const bill = document.querySelector('.bill').value;
-    if(!bill) return;
-    if(bill>0) console.log('1');
+    const person = document.querySelector('.amountSplit');
+    const total = document.querySelector('.totalSplit');
+    let bill = parseInt(document.querySelector('.bill').value);
+    let people = parseInt(document.querySelector('.people').value);
+    if(!bill) bill=0;
+    if(!people) people=0;
+
+    const tip = parseInt(bill>0?(bill/100*percent).toFixed(2):0);
+    person.textContent=people>0?`$${(tip/people).toFixed(2)}`:`$0.00`;
+    total.textContent=people>0?`$${((bill+tip)/people).toFixed(2)}`:`$0.00`;
+    console.log(bill,tip,people);
+
+
+
+   if(percent>0) console.log('percent');
+
+    
 })
